@@ -18,26 +18,31 @@ progress-bar() {
 
 ## Route #1
 echo "Trying the root location with a get "
-progress-bar 4
+progress-bar 2
 curl --request GET --url http://localhost:4567/  --verbose
 
 echo "\n\n"
 
 ## Route #2
 echo "POSTing data  with secret message  - Meet me at Coffee Shop"
-progress-bar 4
+progress-bar 2
 curl --request POST --url 'http://localhost:4567/secret?message=meet%20me%20at%20Coffee%20shop' --verbose
 
 echo "\n\n"
 
 ## Route #3
 echo "Route with named parameters -  Sending message to Room 42 "
-progress-bar 4
+progress-bar 2
 curl --request GET --url http://localhost:4567/send/42/
 
 echo "\n\n"
 
 ## Route #4
 echo "Blender Route - Mixing Apples with oranges"
-progress-bar 4
-curl --request GET --url http://localhost:4567/mix/apple/with/oranges/ 
+progress-bar 2
+curl --request GET --url http://localhost:4567/mix/apple/with/oranges/ --verbose
+
+## Route #5
+echo "Testing the json api "
+progress-bar 2
+curl --request GET --url http://localhost:4567/json --verbose
